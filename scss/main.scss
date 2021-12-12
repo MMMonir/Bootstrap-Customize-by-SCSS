@@ -1,0 +1,29 @@
+/* Custom Color */
+$primary: #c29938;
+
+/* Media query Break Point */
+/* $grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+); */
+
+/* Container Max Width */
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1040px,
+  xxl: 1224px
+);
+
+/* Number of Columns */
+$grid-columns: 120;
+$grid-gutter-width: 20px;
+$grid-row-columns: 60;
+
+/* Import Bootstrap */
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
