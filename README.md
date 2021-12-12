@@ -51,3 +51,30 @@ $grid-row-columns: 60;
 /* Import Bootstrap */
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 ```
+
+- * Adding New Color:(Above of Bootstrap Import)
+```
+//Import Function and Variable
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+//Adding New Color Start
+$custom-theme-colors: (
+  "altlight": #d63a3a,
+  "altdark": #522192
+);
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge(
+  $theme-colors-rgb,
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($white),
+    "body":  to-rgb($body-color)
+  )
+);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+//Adding New Color End
+```
